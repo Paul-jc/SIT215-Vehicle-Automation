@@ -19,6 +19,9 @@ class Car:
     def brake(self):
         self.current_speed -= self.braking_percent
 
+    def get_car_name(self):
+        return self.car_name
+
     def get_current_speed(self):
         return self.current_speed
     
