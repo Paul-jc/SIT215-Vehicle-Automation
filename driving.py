@@ -60,7 +60,7 @@ def drive_car(car_object, virtual_car):
         virtual_car.increment_current_position(
             kmh_to_ms(virtual_car.get_current_speed()))
         print(
-            f"{car_object.car_name} accelerating at: {car_object.get_accelleration_percent()}")
+            f"{car_object.get_car_name()} accelerating at: {car_object.get_accelleration_percent()}")
         accelerate(car_object)
         car_object.increment_seconds_driving(1)
         virtual_car.increment_seconds_driving(1)
@@ -68,9 +68,9 @@ def drive_car(car_object, virtual_car):
         # visualisation.update_car_speed(car_object)
         print(f"Current speed: {str(car_object.get_current_speed())}")
         print(
-            f"{car_object.car_name} current position: {str(car_object.get_current_position())}")
+            f"{car_object.get_car_name()} current position: {str(car_object.get_current_position())}")
         print(
-            f"{virtual_car.car_name} current position: {str(virtual_car.get_current_position())}")
+            f"{virtual_car.get_car_name()} current position: {str(virtual_car.get_current_position())}")
         print("==========================================================")
     while ((calculate_speed_difference(car_object.get_current_speed(), car_object.get_desired_speed()) < -0.5 or calculate_time_between_cars(car_object, virtual_car) < 2) and car_object.get_current_speed() > 0):
         print(calculate_speed_difference(
@@ -83,7 +83,8 @@ def drive_car(car_object, virtual_car):
             kmh_to_ms(virtual_car.get_current_speed()))
         if calculate_time_between_cars(car_object, virtual_car) < 2:
             print("Other vehicle detected too close")
-        print(f"{car_object.car_name} braking at: {car_object.get_braking_percent()}")
+        print(
+            f"{car_object.get_car_name()} braking at: {car_object.get_braking_percent()}")
         decellerate(car_object)
         car_object.increment_seconds_driving(1)
         virtual_car.increment_seconds_driving(1)
@@ -91,9 +92,9 @@ def drive_car(car_object, virtual_car):
         # visualisation.update_car_speed(car_object)
         print(f"Current speed: {str(car_object.get_current_speed())}")
         print(
-            f"{car_object.car_name} current position: {str(car_object.get_current_position())}")
+            f"{car_object.get_car_name()} current position: {str(car_object.get_current_position())}")
         print(
-            f"{virtual_car.car_name} current position: {str(virtual_car.get_current_position())}")
+            f"{virtual_car.get_car_name()} current position: {str(virtual_car.get_current_position())}")
         print("==========================================================")
 
 
