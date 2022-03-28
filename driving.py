@@ -47,7 +47,7 @@ def calculate_speed_delta(car_object1, car_object2):
 
 
 def calculate_time_between_cars(car_object1, car_object2):
-    return calculate_distance_between_cars(car_object1, car_object2) / calculate_speed_delta(car_object1, car_object2)
+    return calculate_distance_between_cars(car_object1, car_object2) / calculate_speed_delta(car_object1, car_object2) if car_object1.get_current_speed() > 0 else 100
 
 
 # While the car is not at desired speed, accelerate or brake
